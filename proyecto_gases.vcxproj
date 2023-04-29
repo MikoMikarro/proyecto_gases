@@ -70,6 +70,15 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ExternalIncludePath>C:\Users\lopez\AppData\Local\Programs\Python\Python310\Lib\site-packages\numpy\core\include;C:\Users\lopez\AppData\Local\Programs\Python\Python310\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>C:\Users\lopez\AppData\Local\Programs\Python\Python310\libs;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <IncludePath>C:\Users\lopez\AppData\Local\Programs\Python\Python310\include;$(IncludePath)</IncludePath>
+    <ExternalIncludePath>C:\Users\lopez\AppData\Local\Programs\Python\Python310\Lib\site-packages\numpy\core\include;C:\Users\lopez\AppData\Local\Programs\Python\Python310\include;$(ExternalIncludePath)</ExternalIncludePath>
+    <LibraryPath>C:\Users\lopez\AppData\Local\Programs\Python\Python310\libs;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -128,6 +137,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="proyecto_gases.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="matplotlibcpp.h" />
+    <ClInclude Include="spline.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
